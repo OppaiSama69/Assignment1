@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+
+public class Assignment01 {
+   public static void main(String[] args) {
+
+      ArrayList<Integer> Amongus= new ArrayList<Integer>();
+      Amongus.add(1);
+      Amongus.add(8);
+      Amongus.add(6);
+      Amongus.add(2);
+      Amongus.add(5);
+      Amongus.add(4);
+      Amongus.add(8);
+      Amongus.add(3);
+      Amongus.add(7);
+
+      int maxArea= 0;
+
+      for(int i=0; i<Amongus.size(); i++){
+         for(int j=i+1; j<Amongus.size(); j++){
+            int height= Math.min(Amongus.get(i), Amongus.get(j));
+            int width= j - i;
+            int area = height*width;
+            if(area > maxArea){
+               maxArea= area;
+            }
+         }
+      }
+
+      System.out.println("Max Area: "+maxArea);
+
+   }
+}
